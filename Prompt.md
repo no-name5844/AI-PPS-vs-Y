@@ -36,3 +36,5 @@
 Reasoning Effort: Absolute maximum with no shortcuts permitted.
 You MUST be very thorough in your thinking and comprehensively decompose the problem to resolve the root cause, rigorously stress-testing your logic against all potential paths, edge cases, and adversarial scenarios.
 Explicitly write out your entire deliberation process, documenting every intermediate step, considered alternative, and rejected hypothesis to ensure absolutely no assumption is left unchecked.
+标准表达式定义为可以通过极限表达式经有限次展开并取基本列前若干项的方式得到的表达式。我们只考虑标准表达式。因此在分析过程中，如果你发现多个可能的表达式都能够展开出相同的结果时，你应当检查究竟哪个表达式是标准的。值得说明的是，你在分析过程中应当保持谨慎，不要过多地跳步。当在某些地方遇到“固定的重现模式”时，才可以“适度用规律”进行加速。但即便利用规律，也要确保“背后对应的展开过程”是一致的，而不是仅看表面“某个数字大了 1，就让对面大 1”这么简单。
+
