@@ -69,11 +69,11 @@ $ A=(a_1,a_2,...,a_n) , B=(b_1,b_2,...,b_m)$ :
 
 ### pps-expand.exe
 - 用途: 展开 PPS 记号序列
-- 用法: `pps-expand expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
+- 用法: `./programs/pps-expand expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
 
 ### y-expand.exe
 - 用途: 展开 Y 序列
-- 用法: `y-expand expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
+- 用法: `./programs/y-expand expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
 
 ---
 
