@@ -43,6 +43,30 @@ $ A=(a_1,a_2,...,a_n) , B=(b_1,b_2,...,b_m)$ :
 
 ---
 
+## 分析日志（2026-05-09）
+
+### 验证结果
+
+**初步假设错误**：之前假设 `pps(n)` 与 `y(n+1)` 有简单的+1映射关系，这是错误的。
+
+**验证数据**：
+| Y | PPS | Y展开 | PPS展开 | 结果 |
+| :--- | :--- | :----- | :------ | :--- |
+| y(1) | pps(0) | ω | ω | ✅ 同为极限 |
+| y(1,1) | pps(0,0) | ω | ω | ✅ 同为极限 |
+| y(1,1,1) | pps(0,0,0) | ω | ω | ✅ 同为极限 |
+| y(1,2) | pps(0,1) | 1,1,1,1,1... | 0,0,0,0,0... | ❌ 不等 |
+| y(1,2,2) | pps(0,1,1) | 1,2,1,2,1... | 0,1,0,3,0... | ❌ 不等 |
+| y(1,2,3) | pps(0,1,2) | 1,2,2,2,2... | 0,1,1,1,1... | ❌ 不等 |
+
+### 结论
+
+1. **极限情况**：y(1,...), pps(0,...) 都对应 ω
+2. **非极限情况**：逐项展开完全不等，简单+1映射是错误的
+3. **下一步**：需要重新理解 README 中的递推公式，而非假设简单的元素映射
+
+---
+
 ## Y 序列系统定义
 
 ### 比较
@@ -63,17 +87,14 @@ $ A=(a_1,a_2,...,a_n) , B=(b_1,b_2,...,b_m)$ :
 ## 方法
 - $pps\_to\_y(pps(0))= y(1)$
 - $pps\_to\_y(pps(A, 0))= y(pps\_to\_y(A), 1)$
-- $pps\_to\_y(pps(A))= y(B)\bigg(\forall n\in \mathbb{N})(\exists m\in\mathbb{N}\land\exists k\in\mathbb{N}\iff y(B[m])<pps(A[n])<y(B[k])\bigg)$
+- $pps\_to\_y(pps(A))= y(B)\bigg(\forall n\in \mathbb{N})(\exists m\in\mathbb{N}\land\exists k\in\mathbb{N}\iff y(B[m])\le pps_to_y(A[n])\le y(B[k])\bigg)$(至少10佐证)
 ---
 ## 程序功能说明
 
-### pps-expand.exe
-- 用途: 展开 PPS 记号序列
-- 用法: `./Program/pps-expand.exe expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
+### seqtool.exe
+- 用途: 记号序列
+- 用法: 见`./Program/seqtool.exe `
 
-### y-expand.exe
-- 用途: 展开 Y 序列
-- 用法: `./Program/y-expand.exe expand -s "seq_1" -n count_1 -s "seq_2" -n count_2 ...`
 
 ---
 
