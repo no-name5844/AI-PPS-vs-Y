@@ -87,6 +87,8 @@ $ A=(a_1,a_2,...,a_n) , B=(b_1,b_2,...,b_m)$ :
 ## 方法(恒成立)
 - $pps\_to\_y(pps(0))= y(1)$
 - $pps\_to\_y(pps(A, 0))= y(pps\_to\_y(A), 1)$
+<<<<<<< HEAD
 - $pps\_to\_y(pps(A))= y(B)\bigg(\forall n\in \mathbb{N})(\exists m\in\mathbb{N}\land\exists k\in\mathbb{N}\iff y(B[m])\le pps_to_y(A[n])\le y(B[k])\bigg)$(至少10佐证)
----
+=======
+
 
